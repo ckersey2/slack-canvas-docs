@@ -1,4 +1,4 @@
-name: Deploy Docs to GitHub Pages
+name: Deploy Docs
 
 on:
   push:
@@ -12,9 +12,15 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
+
+      - name: Configure Git identity
+        run: |
+          git config --global user.name "ckersey2 Bot"
+          git config --global user.email "docs@ckersey2.dev"
+
       - run: yarn install
-      - run: yarn build
       - run: yarn deploy
         env:
           GIT_USER: ckersey2
+          USE_SSH: false
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

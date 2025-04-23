@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkslack_canvas_docs_site=self.webpackChunkslack_canvas_docs_site||[]).push([[647],{8122:(s,e,a)=>{a.r(e),a.d(e,{default:()=>d});a(6540);var c=a(4164),r=a(1769),n=a(204),t=a(2831),u=a(1410),l=a(4848);function d(s){return(0,l.jsx)(r.e3,{className:(0,c.A)(n.G.wrapper.docsPages),children:(0,l.jsx)(u.A,{children:(0,t.v)(s.route.routes)})})}}}]);

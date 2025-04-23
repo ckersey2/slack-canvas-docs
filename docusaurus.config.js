@@ -21,6 +21,9 @@ const config = {
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
+        customFields: {
+          githubUser: "ckersey2",
+        },
       },
     ],
   ],
