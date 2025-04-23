@@ -45,7 +45,7 @@ async function syncMarkdownFile(filePath: string, canvasId: string): Promise<voi
   const replaced = replaceImageMarkdown(raw);
   const blocks: CanvasBlock[] = markdownToCanvasBlocks(replaced);
 
-  await app.client.conversations.canvas.update({
+  await app.client.apiCall("conversations.canvas.update", {
     canvas_id: canvasId,
     content: { blocks },
   });
