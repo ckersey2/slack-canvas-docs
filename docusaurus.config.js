@@ -18,17 +18,17 @@ module.exports = {
   },
 
   presets: [
-    [
-      "@docusaurus/preset-classic",
-      {
-        docs: {
-          routeBasePath: "/",
-          sidebarPath: require.resolve("./sidebars.js"),
-        },
-        theme: {
-          customCss: require.resolve("./src/css/custom.css"),
-        },
+  [
+    "@docusaurus/preset-classic",
+    {
+      docs: {
+        routeBasePath: "/", // ← makes docs homepage
+        sidebarPath: require.resolve("./sidebars.js"),
       },
-    ],
+      theme: {
+        customCss: require.resolve("./src/css/custom.css"),
+      },
+    },
   ],
+],
 };
