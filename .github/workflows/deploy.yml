@@ -19,8 +19,10 @@ jobs:
           git config --global user.email "docs@ckersey2.dev"
 
       - run: yarn install
-      - run: yarn deploy
+
+      - name: Deploy to GitHub Pages
+        run: yarn deploy
         env:
-          GIT_USER: ckersey2
+          GIT_USER: github-actions
           USE_SSH: false
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
