@@ -88,11 +88,18 @@ yarn sync      # run the syncDocsToCanvas script
 ```
 .
 ├── src/
-│   ├── canvasTypes.ts
-│   ├── markdownToCanvas.ts
-│   └── syncDocsToCanvas.ts
+│   ├── canvasTypes.ts                 # Shared block definitions
+│   ├── markdownToCanvas.ts           # Markdown → Canvas block parser
+│   ├── syncDocsToCanvas.ts           # CLI for syncing .md → Canvas
+│   ├── index.ts                      # Exports all public APIs
+│   └── api/
+│       ├── createCanvas.ts           # Create a new canvas in Slack
+│       ├── canvasLinkBlock.ts        # Generate linked canvas blocks
+│       ├── previewToAppHome.ts       # Push preview to Slack App Home
+│       └── githubSync.ts             # Hook for GitHub Actions
 ├── tsconfig.json
-└── package.json
+├── package.json
+└── README.md
 ```
 
 ---
@@ -110,3 +117,68 @@ yarn sync      # run the syncDocsToCanvas script
 ## 📄 License
 
 MIT
+
+
+---
+
+## 🧪 Examples
+
+### 🧾 Convert Markdown to Canvas Blocks
+
+```ts
+import { markdownToCanvasBlocks } from "@ckersey2/slack-canvas-docs";
+
+const blocks = markdownToCanvasBlocks("# Hello Canvas\nThis is some text");
+```
+
+---
+
+### 🆕 Create a New Canvas
+
+```ts
+import { createCanvas } from "@ckersey2/slack-canvas-docs";
+
+await createCanvas({
+  app,
+  title: "My Canvas",
+  blocks,
+  channelId: "C1234567890"
+});
+```
+
+---
+
+### 🔗 Link to Another Canvas
+
+```ts
+import { canvasLinkBlock } from "@ckersey2/slack-canvas-docs";
+
+const block = canvasLinkBlock({
+  canvasId: "abc123",
+  text: "Read the onboarding doc"
+});
+```
+
+---
+
+### 🧪 Preview Canvas in Slack App Home
+
+```ts
+import { previewCanvasToAppHome } from "@ckersey2/slack-canvas-docs";
+
+await previewCanvasToAppHome({
+  app,
+  userId: "U12345678",
+  blocks
+});
+```
+
+---
+
+### ⚙️ GitHub Action Runner
+
+```ts
+import { runGitTriggeredSync } from "@ckersey2/slack-canvas-docs";
+
+runGitTriggeredSync(); // runs yarn sync and outputs result
+```
