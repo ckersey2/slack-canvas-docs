@@ -10,7 +10,10 @@ Built to support engineering docs, living technical documentation, and Slack-nat
 
 - Convert Markdown to Slack Canvas block format
 - Upload and cache images using Slack Files API
-- Update Canvas documents using Slack’s private `conversations.canvas.update` API
+- Create new Canvases using `conversations.canvas.create`
+- Nest canvases with link blocks (`canvas_id` references)
+- Live preview Canvases in Slack App Home
+- Auto-sync markdown to Slack via GitHub Actions
 - TypeScript support with full type exports
 - CLI ready for automation and CI/CD
 
@@ -96,13 +99,10 @@ yarn sync      # run the syncDocsToCanvas script
 
 ## 🔮 Future Ideas
 
-- Canvas diff and version history
-- Two-way sync (Canvas → Markdown)
-- Canvas templates and snippet libraries
-- Interactive blocks and Slack workflows
-- Local web-based Canvas preview
-- Multi-workspace and multi-channel sync support
-- GitHub App integration for PR-based preview + approval
+- Canvas creation (`conversations.canvas.create`)
+- Nested canvas support via block references
+- Live preview in Slack App Home or local render
+- GitHub Actions integration to auto-sync docs on push
 
 
 ---
