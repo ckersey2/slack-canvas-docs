@@ -1,21 +1,26 @@
 {
-	"name": "slack-canvas-docs-site",
-	"version": "1.0.0",
-	"private": true,
-	"scripts": {
-		"start": "docusaurus start",
-		"build": "docusaurus build",
-		"deploy": "docusaurus deploy"
-	},
-	"dependencies": {
-		"@docusaurus/core": "^3.3.1",
-		"@docusaurus/preset-classic": "^3.3.1",
-		"clsx": "^2.0.0",
-		"react": "^18.2.0",
-		"react-dom": "^18.2.0"
-	},
-	"packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e",
-	"devDependencies": {
-		"@types/node": "^22.14.1"
-	}
+  "name": "@ckersey2/slack-canvas-docs",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist"],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "sync": "tsx src/syncDocsToCanvas.ts"
+  },
+  "dependencies": {
+    "@slack/bolt": "^3.14.0",
+    "marked": "^9.0.0"
+  },
+  "devDependencies": {
+    "tsx": "^4.7.0",
+    "@types/node": "^20.9.0",
+    "typescript": "^5.3.3"
+  }
 }

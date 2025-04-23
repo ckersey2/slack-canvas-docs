@@ -3,10 +3,12 @@
     "target": "ES2020",
     "module": "ESNext",
     "moduleResolution": "Node",
-    "types": ["node"],
-    "checkJs": true,
-    "allowJs": true,
-    "noEmit": true
+    "outDir": "dist",
+    "declaration": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true
   },
-  "include": ["docusaurus.config.js", "sidebars.js"]
+  "include": ["src"]
 }
