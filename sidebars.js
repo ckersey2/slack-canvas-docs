@@ -1,8 +1,10 @@
-export default [
-  {
-    type: "category",
-    label: "Docs",
-    items: ["index", "usage", "canvas-blocks"]
-  }
-];
+/** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
+const sidebars = {
+  docs: [
+    "index",
+    "usage",
+    "canvas-blocks",
+  ],
+};
 
+module.exports = sidebars;
