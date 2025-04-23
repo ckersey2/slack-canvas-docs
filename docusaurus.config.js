@@ -1,4 +1,5 @@
-// module.exports = {
+// @ts-check
+const config = {
   title: "Slack Canvas Docs",
   tagline: "Sync Markdown and images into Slack Canvases",
   url: "https://ckersey2.github.io",
@@ -15,13 +16,14 @@
       {
         docs: {
           routeBasePath: "/",
-          sidebarPath: require.resolve("./sidebars.js")
+          sidebarPath: require.resolve("./sidebars.js"),
         },
         theme: {
-          customCss: require.resolve("./src/css/custom.css")
-        }
-      }
-    ]
-  ]
+          customCss: require.resolve("./src/css/custom.css"),
+        },
+      },
+    ],
+  ],
 };
 
+module.exports = config;
