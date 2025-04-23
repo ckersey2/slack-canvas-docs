@@ -1,15 +1,22 @@
-// @ts-check
-const config = {
+// docusaurus.config.js
+
+module.exports = {
   title: "Slack Canvas Docs",
   tagline: "Sync Markdown and images into Slack Canvases",
   url: "https://ckersey2.github.io",
   baseUrl: "/slack-canvas-docs/",
-  onBrokenLinks: "throw",
-  onBrokenMarkdownLinks: "warn",
-  favicon: "img/favicon.ico",
+  trailingSlash: false, // ✅ Optional SEO warning fix
+
   organizationName: "ckersey2",
   projectName: "slack-canvas-docs",
   deploymentBranch: "gh-pages",
+  favicon: "img/favicon.ico",
+
+  // ✅ Put this here, not inside the presets!
+  customFields: {
+    githubUser: "ckersey2",
+  },
+
   presets: [
     [
       "@docusaurus/preset-classic",
@@ -21,12 +28,7 @@ const config = {
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
-        customFields: {
-          githubUser: "ckersey2",
-        },
       },
     ],
   ],
 };
-
-module.exports = config;
